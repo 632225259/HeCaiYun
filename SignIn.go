@@ -14,15 +14,15 @@ import (
 )
 
 const (
-	Skey    = "" //酷推 skey
-	Cookie  = "" //抓包Cookie
-	Referer = "" //抓包referer
+	Skey    = "SCT6259Toc8zUBfz9DHpE27zBjUGLzlT" //酷推 skey
+	Cookie  = "sajssdk_2015_cross_new_user=1; udata_account_300011972819=JaPyEobBrwwaGy0R4PMqZ73YoezyES0KyjHVXGuj5sA%3D; userid_300011972819=1614331615398298410; udata_s_300011972819=1614331616067519760; CAIYUN-TOKEN=u6iq78dGC+9QuQkdaMRIT4fHKPrLV32qMUM8LpTqMS2rBt27OX+rcB45sdjZrce2C5xcHh9qL/GOadoaJ2JiPkjv9ULmrpBNHyi7nD3hIvwpTFoCfZUjYk7HKD22av433XyoM6x2z0p/7+UraFNAHr5RauhTAg99Jnb8nSiQK+6/I7kwwGQLLGZjRNN2Fw/0Kgu9CYQL0A0gMPaH5wOJ4Dwaac+3oFp63shNn7vnSfTQuxaEXl6nkvEzhJSAXXl4cgLBM7aDyiMgnJUJItM4Sw==; CAIYUN-ACCOUNT=7hN6CpkfY8TE9qvyLzcZvg==; CAIYUN-ENCRYPT-ACCOUNT=MTUwMDM0NDg5NjA=; CAIYUN-SIMPLIFY-ACCOUNT=150****8960; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%22177dda992af20b-0232b334a7ff42-1760647e-230400-177dda992b0271%22%2C%22first_id%22%3A%22%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%2C%22%24latest_referrer%22%3A%22%22%2C%22phoneNumber%22%3A%2215003448960%22%7D%2C%22%24device_id%22%3A%22177dda992af20b-0232b334a7ff42-1760647e-230400-177dda992b0271%22%7D; sensors_stay_url=https%3A%2F%2Fyun.139.com%2Fm%2F%23%2Fmain; sensors_stay_time=1614331846874" //抓包Cookie
+	Referer = "https://yun.139.com/m/" //抓包referer
 	UA      = "Mozilla/5.0 (Linux; Android 10; M2007J3SC Build/QKQ1.191222.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/83.0.4103.106 Mobile Safari/537.36 MCloudApp/7.6.0"
 )
 
 func push(content string) error {
 	var resp SendResult
-	err := gout.POST(fmt.Sprintf("https://push.xuthus.cc/send/%s", Skey)).
+	err := gout.POST(fmt.Sprintf("https://sctapi.ftqq.com/SCT6259Toc8zUBfz9DHpE27zBjUGLzlT.send?title=messagetitle", Skey)).
 		SetBody(content).Debug(true).BindJSON(&resp).Do()
 
 	if err != nil {
